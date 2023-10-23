@@ -1,11 +1,16 @@
+"use client";
+
 import style from "./style.css";
+import Name from "./name";
+import Client from "./client";
+import { GetName } from "@/src/hook/index";
 export default function P() {
-  console.log(JSON.stringify(style));
+  let [count, setCount] = GetName();
   return (
-    <div className="root">
-      <h1 className="iam-text-2xl md:iam-text-[30px] lg:iam-text-4xl">
-        profile
-      </h1>
-    </div>
+    <>
+      <Client>
+        <Name name={"Gao" + count} />
+      </Client>
+    </>
   );
 }
